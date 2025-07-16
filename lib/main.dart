@@ -1,12 +1,16 @@
+import 'package:clinicfinderkenya/dashboard.dart';
 import 'package:flutter/material.dart';
-import 'package:clinicfinderkenya/splash .dart';
-void main (){
+import 'package:clinicfinderkenya/splashscreen .dart';
+
+void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      routes:{
-        '/splash':(context) => Splash()
-      }
-    )
+      initialRoute: '/splash',
+      routes: {
+        '/splash': (context) => Splash(),
+        '/dashboard':(context) => Dashboard(),
+      },
+    ),
   );
 }
