@@ -1,4 +1,5 @@
-import 'package:clinicfinderkenya/dashboard.dart';
+import 'package:clinicfinderkenya/screens/dashboard.dart';
+import 'package:clinicfinderkenya/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 
 class Splash extends StatefulWidget {
@@ -12,14 +13,14 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     super.initState();
-    // _navigatetohome();
+    _navigatetohome();
   }
 
   _navigatetohome() async {
     await Future.delayed(Duration(milliseconds: 10500), () {});
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => Dashboard()),
+      MaterialPageRoute(builder: (context) => RegisterScreen()),
     );
   }
 
@@ -37,18 +38,19 @@ class _SplashState extends State<Splash> {
           width: MediaQuery.of(context).size.width * 0.55,
           child: Column(
             children: [
-              Image(
-                image: AssetImage(
-                  'lib/images/logo1.png',
-                  // height: MediaQuery.of(context).size.height * 0.25,
-                  // fit: BoxFit.fill,
+              Expanded(
+                child: Image(
+                  fit: BoxFit.cover,
+                  image: AssetImage('lib/images/logo1.png'),
                 ),
               ),
-              Text(
-                "Welcome to Clinicfinderkenya  ",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontStyle: FontStyle.italic,
+              Expanded(
+                child: Text(
+                  "Welcome to Clinicfinderkenya  ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.italic,
+                  ),
                 ),
               ),
             ],
